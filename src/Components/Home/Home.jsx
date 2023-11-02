@@ -28,7 +28,7 @@ const Home = () => {
             <img className='w-full md:h-52 rounded' src={food.img} alt=""  />
             <div className='flex justify-between px-5 py-2'>
             <p>{food.name}</p>
-            <Link  to={`${food.id}`}>Show_details</Link>
+            <Link className='text-black' to={`${food.id}`}>Show_details</Link>
             </div>
 
         </div>  )
