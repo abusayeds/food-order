@@ -1,4 +1,10 @@
 .header{
     position: sticky;
-  top: 0;
+    top: 0;
+  
+}
+.nav-sm{
+    position: fixed;
+    bottom: 0;
+    width: 100%;
 }
