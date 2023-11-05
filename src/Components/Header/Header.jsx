@@ -6,8 +6,14 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import './Header.css'
 import { Link } from 'react-router-dom';
 import { faAngleDown, faBars,faBorderNone,faHome,faSearch,faShoppingCart,faUser,faX } from '@fortawesome/free-solid-svg-icons';
-import { useState } from 'react';
+import { useContext, useState } from 'react';
+import { authContext } from '../Contexts/Context';
 const Header = () => {
+
+
+    const {items} = useContext(authContext)
+  //  console.log(items.length);
+
   const [open , setOpen ] =useState(false)
 
    return (
@@ -39,13 +45,13 @@ const Header = () => {
     
      
      <nav className='bg-slate-200  '>
-         <div className=' md:flex items-center justify-around '>
+         <div className=' md:flex items-center justify-around p-4'>
             
             <div className='  flex justify-between p-2 ' >
            
               
               <div className=' relative flex items-center'>
-              <input className=' px-2  py-2 rounded ' type="text" placeholder='search foods  ' onFocus={faBorderNone} />
+              <input className=' px-2  py-2 rounded ' type="text" placeholder='search foods  '/>
                <FontAwesomeIcon className='absolute right-3' icon={faSearch}></FontAwesomeIcon>
               </div>
                
@@ -80,9 +86,10 @@ const Header = () => {
                   <Link to="" className='py-7 px-4 text-black '>Servise</Link>
                   </div>
            </div>
-           <div className='md:flex hidden'>
-              <FontAwesomeIcon className='text-red-500 text-xl' icon={faShoppingCart}></FontAwesomeIcon>
-              
+           <div className='md:flex hidden relative'>
+             <p className='absolute bottom-6 bg-white text-center  px-1 rounded-full left-5'>{items.length}</p>
+             <FontAwesomeIcon className='text-red-500 text-3xl ' icon={faShoppingCart}></FontAwesomeIcon>
+             
             </div>
 
            {/*------- mobail devise -----*/}
