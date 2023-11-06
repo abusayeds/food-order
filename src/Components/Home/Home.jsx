@@ -5,14 +5,7 @@ import { Link, useLoaderData } from 'react-router-dom';
 const Home = () => {
     const foods = useLoaderData() 
 
-    //     const [restaurants,setRestaurants] = useState([])
-    //     console.log(restaurants);
-    //  const findrestaurants = (id) =>{
-    //      const url = `http://localhost:5000/foods/${id}`
-    //      fetch(url)
-    //      .then( res => res.json())
-    //      .then( data => setRestaurants(data.option))
-    //  }
+
  
     return (
        <main className=' md:w-5/6  m-auto text-black rounded bg-white mt-10'>

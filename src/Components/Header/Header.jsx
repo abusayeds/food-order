@@ -5,13 +5,13 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 import './Header.css'
 import { Link } from 'react-router-dom';
-import { faAngleDown, faBars,faBorderNone,faHome,faSearch,faShoppingCart,faUser,faX } from '@fortawesome/free-solid-svg-icons';
+import { faAngleDown, faBars,faHome,faSearch,faShoppingCart,faUser,faX } from '@fortawesome/free-solid-svg-icons';
 import { useContext, useState } from 'react';
 import { authContext } from '../Contexts/Context';
 const Header = () => {
 
 
-    const {items} = useContext(authContext)
+  const {itemlength } = useContext(authContext)
   //  console.log(items.length);
 
   const [open , setOpen ] =useState(false)
@@ -33,17 +33,6 @@ const Header = () => {
     </div>
 
 
-
-
-   
-
-   
-
-
-
-
-    
-     
      <nav className='bg-slate-200  '>
          <div className=' md:flex items-center justify-around p-4'>
             
@@ -86,10 +75,13 @@ const Header = () => {
                   <Link to="" className='py-7 px-4 text-black '>Servise</Link>
                   </div>
            </div>
+
            <div className='md:flex hidden relative'>
-             <p className='absolute bottom-6 bg-white text-center  px-1 rounded-full left-5'>{items.length}</p>
+             <Link>
+             <p className='absolute bottom-6 bg-white text-center  px-1 rounded-full left-5'> {itemlength.length}     </p>
              <FontAwesomeIcon className='text-red-500 text-3xl ' icon={faShoppingCart}></FontAwesomeIcon>
              
+             </Link>
             </div>
 
            {/*------- mobail devise -----*/}
@@ -134,7 +126,8 @@ const Header = () => {
        <div>
        <Link to='/' className='text-white text-2xl'><FontAwesomeIcon icon={faHome}></FontAwesomeIcon></Link> 
        </div>
-       <div>
+       <div className='relative'>
+       <p className='absolute bg-white text-black rounded-full px-1 bottom-4 left-4'>  {itemlength.length }     </p>
        <Link className='text-white text-2xl'><FontAwesomeIcon icon={faShoppingCart}></FontAwesomeIcon></Link>
        </div>
        <div>

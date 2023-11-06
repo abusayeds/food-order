@@ -1,8 +1,9 @@
-import { faArrowRight, faLeftLong } from "@fortawesome/free-solid-svg-icons";
+import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useContext, useEffect, useState } from "react";
 import { useLoaderData } from "react-router-dom";
 import { authContext } from "../Contexts/Context";
+import Cart from "../Cart/Cart";
 
 
 function Restaurant() {
@@ -25,6 +26,7 @@ const addFoods = (restaurant) => {
   findFoods(restaurant)
 }
 
+
   return (
    <main className="bg-white w-5/6 mx-auto md:my-4 md:p-10 ">
     <div className="flex justify-center md:gap-8 gap-2 p-2" >
@@ -41,8 +43,8 @@ const addFoods = (restaurant) => {
     {
       restaurants.map( restaurant => <div
 
-        onClick={() => addFoods(restaurant) }
-      key={restaurant.id}
+        onClick={() => addFoods(restaurant)  }
+      key={restaurant.details}
 
       className="m-5 bg-slate-100 rounded "
       
@@ -50,7 +52,7 @@ const addFoods = (restaurant) => {
         {
           <img className="w-full h-52 rounded" src={restaurant.image_url} alt=""  />
         }
-        <div className="flex items-center justify-between py-2 px-4 ">
+        <div  className="flex items-center justify-between py-2 px-4 ">
           <div className="flex items-center">
           <p className="">{restaurant.details}</p>
           </div>
@@ -62,7 +64,8 @@ const addFoods = (restaurant) => {
       </div> )
     }
     </div>
-    
+    <Cart></Cart>
+   
    </main>
   );
 }

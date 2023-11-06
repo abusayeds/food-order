@@ -5,7 +5,9 @@ import './App.css'
 import Main from './layout/Main'
 import Home from './Components/Home/Home'
 import Restaurant from './Components/Restaurant/Restaurant'
-import Navlink from './Components/Header/Navlink.jsx/Navlink'
+import Cart from './Components/Cart/Cart'
+
+
 
 
 
@@ -29,10 +31,11 @@ function App() {
             element: <Restaurant></Restaurant>
           },
           {
-            path: 'nav',
-            element: <Navlink></Navlink>
-
+            path: 'cart',
+            element: <Cart></Cart>
           }
+         
+        
         ]
      }
     ])
