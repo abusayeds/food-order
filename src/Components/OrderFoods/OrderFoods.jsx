@@ -1,25 +1,54 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { authContext } from "../Contexts/Context";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {  faTrashCan } from "@fortawesome/free-solid-svg-icons";
+import {  faBagShopping, faLockOpen, faTrashCan, faUndo } from "@fortawesome/free-solid-svg-icons";
+import { Link } from "react-router-dom";
 
 
 const OrderFoods = () => {
 
     let total = 0;
     const {itemlength} = useContext(authContext)
+    const {hendeldelete} = useContext(authContext)
+  //  const authcontextitem = useContext(authContext)
+  //    const [itemlength, setitemlength] =useState(authcontextitem.itemlength)
 
-
+    //  const hendeldelete = (id) => {
+    // const remaingitem = itemlength.filter(item => item.category_id !== id)
+    // setitemlength(remaingitem)
+    //  }
+   
     for( const item of itemlength){
         const price =parseFloat(item.price)
        total = total + price;
     }
-  
+       
  
     return (
-        <div className="w-5/6 bg-white text-black mx-auto p-5">
-           <div className="md:bg-slate-200 md:w-4/6 md:p-6 md:m-auto">
-         
+        <div className="w-5/6 bg-white text-black mx-auto p-5 ">
+           <div className="md:bg-slate-200 rounded md:w-4/6 md:p-6 md:m-auto">
+             <div className="bg-white p-2 flex items-center rounded">
+           
+              <p> <FontAwesomeIcon  icon={faLockOpen}></FontAwesomeIcon> </p>
+              <p  className="text-2xl ml-2 font-semibold" >  Foods order cart </p>
+             </div>
+            {
+              itemlength.length === 0 && 
+              <div className="flex items-center justify-center h-52">
+                 
+                 <div>
+                     <div className="flex items-center justify-center ">
+                      <p className="text-4xl bg-blue-200 text-blue-500 rounded-full px-6 py-5"><FontAwesomeIcon icon={faBagShopping}></FontAwesomeIcon></p>    
+                     </div>
+                     <div className="text-center w-5/6 m-auto">
+                     <p className="text-2xl font-semibold">Opps !!! Your cart is empty</p>    
+                    <p>No items added in your cart. Please add product to your cart list. <Link to='/' className="text-blue-500"> Back to Home</Link></p> 
+                      </div>   
+                 </div>
+
+              </div>
+             
+            }
            <div>
            {
                 itemlength.map(item => <div key={item.details}
@@ -42,7 +71,7 @@ const OrderFoods = () => {
 
                   <div className="flex items-center justify-end ">
                    
-                    <p  className="bg-white p-2 rounded-full hover:text-red-600 text-red-500 text-4xl" > <FontAwesomeIcon icon={faTrashCan}></FontAwesomeIcon></p>
+                    <p onClick={() => hendeldelete(item.category_id)} className="bg-white p-2 rounded-full hover:text-red-600 text-red-500 text-4xl" > <FontAwesomeIcon icon={faTrashCan}></FontAwesomeIcon></p>
                   </div>
                 </div> )
             }

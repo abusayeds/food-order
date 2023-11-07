@@ -21,9 +21,15 @@ import { createContext, useEffect, useState } from "react";
     return findfoodlength
    }
 
+   const hendeldelete = (id) => {
+     const remaingitem = itemlength.filter(item => item.category_id !== id)
+     setitemlength(remaingitem)
+    return hendeldelete
+   }
+
   //  console.log(itemlength);
 
-    const authinfo = {items , findFoods, findfoodlength ,itemlength }
+    const authinfo = {items , findFoods, findfoodlength ,itemlength ,hendeldelete }
   return (
     <div>
       <authContext.Provider value={authinfo}>
