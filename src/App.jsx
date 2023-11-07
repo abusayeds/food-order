@@ -6,6 +6,7 @@ import Main from './layout/Main'
 import Home from './Components/Home/Home'
 import Restaurant from './Components/Restaurant/Restaurant'
 import Cart from './Components/Cart/Cart'
+import OrderFoods from './Components/OrderFoods/OrderFoods'
 
 
 
@@ -33,6 +34,10 @@ function App() {
           {
             path: 'cart',
             element: <Cart></Cart>
+          },
+          {
+            path: 'order',
+            element: <OrderFoods></OrderFoods>
           }
          
         

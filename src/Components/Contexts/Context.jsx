@@ -21,7 +21,7 @@ import { createContext, useEffect, useState } from "react";
     return findfoodlength
    }
 
-   console.log(itemlength);
+  //  console.log(itemlength);
 
     const authinfo = {items , findFoods, findfoodlength ,itemlength }
   return (

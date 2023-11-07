@@ -34,7 +34,7 @@ const Header = () => {
 
 
      <nav className='bg-slate-200  '>
-         <div className=' md:flex items-center justify-around p-4'>
+         <div className=' md:flex items-center justify-around p-2'>
             
             <div className='  flex justify-between p-2 ' >
            
@@ -77,7 +77,7 @@ const Header = () => {
            </div>
 
            <div className='md:flex hidden relative'>
-             <Link>
+             <Link to= "/order">
              <p className='absolute bottom-6 bg-white text-center  px-1 rounded-full left-5'> {itemlength.length}     </p>
              <FontAwesomeIcon className='text-red-500 text-3xl ' icon={faShoppingCart}></FontAwesomeIcon>
              
@@ -122,13 +122,13 @@ const Header = () => {
 
     </main>
 
-    <main className= 'nav-sm  bg-red-600   flex md:hidden justify-between px-10 py-3 md:rounded '>
+    <main className= 'nav-sm  bg-red-600   flex md:hidden justify-between px-10 py-2 md:rounded '>
        <div>
        <Link to='/' className='text-white text-2xl'><FontAwesomeIcon icon={faHome}></FontAwesomeIcon></Link> 
        </div>
        <div className='relative'>
        <p className='absolute bg-white text-black rounded-full px-1 bottom-4 left-4'>  {itemlength.length }     </p>
-       <Link className='text-white text-2xl'><FontAwesomeIcon icon={faShoppingCart}></FontAwesomeIcon></Link>
+       <Link to='/order' className='text-white text-2xl'><FontAwesomeIcon icon={faShoppingCart}></FontAwesomeIcon></Link>
        </div>
        <div>
        <Link className='text-white text-2xl'><FontAwesomeIcon icon={faUser}></FontAwesomeIcon></Link>

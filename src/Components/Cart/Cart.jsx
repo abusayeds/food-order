@@ -23,9 +23,10 @@ const [catritems , setCartItems] = useState([])
 
 
  const hendelitemlength = (item) =>{
-    alert('succecefly added')
+   
     setCartItems(item)
     findfoodlength(item)
+    setfooditem([])
 
     
  } 
@@ -52,7 +53,7 @@ const [catritems , setCartItems] = useState([])
             <p className="font-medium">Quality : Fresh_Food</p>
            <div className="mt-4  md:w-4/6">
            <button className="bg-blue-400 md:w-4/5 "  onClick={() =>  hendelitemlength(item) }> Add to cart</button>
-           <button className="md:absolute top-0 right-0 bg-red-400 hover:bg-red-500 hover:text-white ml-8" onClick={() => setfooditem([])}> <FontAwesomeIcon icon={faX}></FontAwesomeIcon></button></div>
+           <button className="md:absolute top-0 right-0  hover:bg-red-500 hover:text-white ml-8" onClick={() => setfooditem([])}> <FontAwesomeIcon icon={faX}></FontAwesomeIcon></button></div>
            </div>
            <div className="flex items-center justify-center mt-10">
            <p className="text-red-600">Eat healthy food <FontAwesomeIcon icon={faHeart}></FontAwesomeIcon> to be always good</p>
