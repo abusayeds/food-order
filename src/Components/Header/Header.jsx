@@ -8,13 +8,23 @@ import { Link } from 'react-router-dom';
 import { faAngleDown, faBars,faHome,faSearch,faShoppingCart,faUser,faX } from '@fortawesome/free-solid-svg-icons';
 import { useContext, useState } from 'react';
 import { authContext } from '../Contexts/Context';
+
 const Header = () => {
 
 
   const {itemlength } = useContext(authContext)
-  //  console.log(items.length);
-
   const [open , setOpen ] =useState(false)
+
+
+  // sing in methods
+  const {user} = useContext(authContext)
+ 
+ 
+  const {logOut} =useContext(authContext) 
+ 
+
+   
+
 
    return (
     <section className=' header'>
@@ -26,8 +36,12 @@ const Header = () => {
         <p><Link to='/' className=' text-white ml-8 text-xl '>Home</Link></p>
     </div>
 
-    <div className=' ml-4'>
-     <p> <Link className='text-white  '>Log in</Link></p>
+    <div className=' ml-10 flex items-center gap-4  '>
+      <img className='w-12 rounded-full' src={user?.photoURL} alt="" />
+     {
+      user?.email ?   <p onClick={() => logOut()}>LogOut</p>
+      : <p> <Link to='/login' className='text-white  '>Log in</Link></p>
+     }
     </div>
 
     </div>
@@ -61,24 +75,25 @@ const Header = () => {
            <div className='md:flex hidden ml-10  '>
             
                   <div className='group'>
-                    <p><Link to="" className='py-7 px-4 text-black  '> category <FontAwesomeIcon icon={faAngleDown}></FontAwesomeIcon></Link></p>
+                    <p><Link className='py-7 px-4 text-black  '> category <FontAwesomeIcon icon={faAngleDown}></FontAwesomeIcon></Link></p>
                     <div className='absolute top-30 bg-slate-300 p-5 rounded hidden group-hover:block hover:block'>
-                    <p><Link className='text-black'> vasutal</Link></p>
-                    <p><Link  className='text-black'> porota</Link></p>
-                    <p><Link  className='text-black'> moklai</Link></p>
-                    <p><Link  className='text-black'> vat</Link></p>
+                    <p><Link className='text-black'> BreakFast</Link></p>
+                    <p><Link  className='text-black'> Lunce</Link></p>
+                    <p><Link  className='text-black'> Dinner</Link></p>
+                    <p><Link  className='text-black'> Drinks</Link></p>
+                    <p><Link  className='text-black'> Dessert</Link></p>
                     </div>
                   </div>
                   <div>
-                  <Link  to="" className='py-7 px-4 text-black'> About </Link>
-                  <Link to="" className='py-7 px-4 text-black'> Inventory</Link>
+                  <Link  to="/about" className='py-7 px-4 text-black'> About </Link>
+                  <Link to="/inventory" className='py-7 px-4 text-black'> Inventory</Link>
                   <Link to="" className='py-7 px-4 text-black '>Servise</Link>
                   </div>
            </div>
 
            <div className='md:flex hidden relative'>
              <Link to= "/order">
-             <p className='absolute bottom-6 bg-white text-center  px-1 rounded-full left-5'> {itemlength.length}     </p>
+             <p className='absolute bottom-6 bg-white text-center  px-2  rounded-full left-5'> {itemlength.length}     </p>
              <FontAwesomeIcon className='text-red-500 text-3xl ' icon={faShoppingCart}></FontAwesomeIcon>
              
              </Link>
@@ -106,9 +121,9 @@ const Header = () => {
                   
                   </div>
 
-                  <Link  to="" className=' text-black'> About </Link>
-                  <Link to="" className=' text-black'> Inventory</Link>
-                  <Link to="" className=' text-black '>Servise</Link>
+                  <Link  to="/about" className=' text-black'> About </Link>
+                  <Link to="/inventory" className=' text-black'> Inventory</Link>
+                  <Link to="/servise" className=' text-black '>Servise</Link>
                     </div>
                
                 
@@ -127,11 +142,16 @@ const Header = () => {
        <Link to='/' className='text-white text-2xl'><FontAwesomeIcon icon={faHome}></FontAwesomeIcon></Link> 
        </div>
        <div className='relative'>
-       <p className='absolute bg-white text-black rounded-full px-1 bottom-4 left-4'>  {itemlength.length }     </p>
+       <p className='absolute bg-white text-black rounded-full px-2 bottom-4 left-4'>  {itemlength.length }     </p>
        <Link to='/order' className='text-white text-2xl'><FontAwesomeIcon icon={faShoppingCart}></FontAwesomeIcon></Link>
        </div>
-       <div>
-       <Link className='text-white text-2xl'><FontAwesomeIcon icon={faUser}></FontAwesomeIcon></Link>
+       <div className='flex'>
+       <img className='w-12 rounded-full' src={user?.photoURL} alt="" />
+       
+       {
+      user?.email ?   <p onClick={() => logOut()}>LogOut</p>
+      : <Link to='/login' className='text-white text-2xl'><FontAwesomeIcon icon={faUser}></FontAwesomeIcon></Link>
+     }
        </div>
     </main>
     </section>

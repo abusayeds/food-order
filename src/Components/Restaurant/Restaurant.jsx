@@ -29,7 +29,7 @@ const addFoods = (restaurant) => {
 
   return (
    <main className="bg-white w-5/6 mx-auto md:my-4 md:p-10 ">
-    <div className="flex justify-center md:gap-8 gap-2 p-2" >
+    {/* <div className="flex justify-center md:gap-8 gap-2 p-2" >
     {
       items.map(item => <div
       key={item.id}
@@ -38,7 +38,7 @@ const addFoods = (restaurant) => {
      <p>{item.name}</p>
       </div> )
     }
-    </div>
+    </div> */}
      <div className="text-black md:grid grid-cols-3 md:gap-4  ">
     {
       restaurants.map( restaurant => <div

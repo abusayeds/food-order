@@ -7,6 +7,11 @@ import Home from './Components/Home/Home'
 import Restaurant from './Components/Restaurant/Restaurant'
 import Cart from './Components/Cart/Cart'
 import OrderFoods from './Components/OrderFoods/OrderFoods'
+import About from './Components/About/About'
+import Inventory from './Components/Inventory/Inventory'
+import Servise from './Components/Servise/Servise'
+import Login from './Components/Login/Login'
+import Register from './Components/Login/Register'
 
 
 
@@ -38,6 +43,27 @@ function App() {
           {
             path: 'order',
             element: <OrderFoods></OrderFoods>
+          },
+          {
+            path: "about",
+            element: <About></About>
+          },
+          {
+            path: 'inventory',
+            element: <Inventory></Inventory>
+          },
+          {
+            path: 'servise',
+            element: <Servise></Servise>
+          },
+          {
+            path: 'login',
+            element: <Login></Login>
+
+          },
+          {
+            path: 'register',
+            element: <Register></Register>
           }
          
         

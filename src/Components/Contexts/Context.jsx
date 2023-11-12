@@ -1,8 +1,12 @@
-import { data } from "autoprefixer";
-import { createContext, useEffect, useState } from "react";
+
+import { createContext,  useEffect,  useState } from "react";
+import {createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut} from "firebase/auth"
+import app from "../../firebase/firebase.Config";
 
 
   export const authContext = createContext()
+
+
   const Context = ({children}) => {
      
     
@@ -26,10 +30,57 @@ import { createContext, useEffect, useState } from "react";
      setitemlength(remaingitem)
     return hendeldelete
    }
+    // singin methods ******
 
-  //  console.log(itemlength);
+     const auth = getAuth(app)
+     const [user , setuser] = useState({})
+       
 
-    const authinfo = {items , findFoods, findfoodlength ,itemlength ,hendeldelete }
+     const logOut = () =>{
+      signOut(auth)
+      .then(() => {
+        setuser({})
+      })
+      .catch(() =>{
+        setuser({})
+      })
+     }
+     const hendlegooglesingin = (provider) => {
+      signInWithPopup (auth , provider)
+       return hendlegooglesingin
+     }
+   const createUser = (email,password) => {
+    return  createUserWithEmailAndPassword(auth ,email, password)
+
+   }
+
+   const signin = (email,password) => {
+    return signInWithEmailAndPassword(auth ,email, password)
+     
+   }
+
+
+   useEffect ( () => {
+    const unSubscribe =  onAuthStateChanged (auth ,  (currentUser) => {
+      setuser(currentUser)
+      return () =>  unSubscribe
+    })
+   } ,[])
+
+
+
+
+
+
+    // singin methods ******
+     
+
+
+    const authinfo = {
+      items , findFoods, findfoodlength ,itemlength ,hendeldelete, 
+      // sing methods user
+      user,  hendlegooglesingin,logOut,createUser,signin
+    }
   return (
     <div>
       <authContext.Provider value={authinfo}>

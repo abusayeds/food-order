@@ -1,7 +1,7 @@
-import { useContext, useState } from "react";
+import { useContext} from "react";
 import { authContext } from "../Contexts/Context";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {  faBagShopping, faLockOpen, faTrashCan, faUndo } from "@fortawesome/free-solid-svg-icons";
+import {  faBagShopping, faLockOpen, faTrashCan } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 
 
@@ -10,13 +10,7 @@ const OrderFoods = () => {
     let total = 0;
     const {itemlength} = useContext(authContext)
     const {hendeldelete} = useContext(authContext)
-  //  const authcontextitem = useContext(authContext)
-  //    const [itemlength, setitemlength] =useState(authcontextitem.itemlength)
-
-    //  const hendeldelete = (id) => {
-    // const remaingitem = itemlength.filter(item => item.category_id !== id)
-    // setitemlength(remaingitem)
-    //  }
+ 
    
     for( const item of itemlength){
         const price =parseFloat(item.price)
@@ -30,7 +24,7 @@ const OrderFoods = () => {
              <div className="bg-white p-2 flex items-center rounded">
            
               <p> <FontAwesomeIcon  icon={faLockOpen}></FontAwesomeIcon> </p>
-              <p  className="text-2xl ml-2 font-semibold" >  Foods order cart </p>
+              <p  className="text-2xl md:ml-2 font-semibold" >  Foods order cart </p>
              </div>
             {
               itemlength.length === 0 && 
@@ -40,8 +34,8 @@ const OrderFoods = () => {
                      <div className="flex items-center justify-center ">
                       <p className="text-4xl bg-blue-200 text-blue-500 rounded-full px-6 py-5"><FontAwesomeIcon icon={faBagShopping}></FontAwesomeIcon></p>    
                      </div>
-                     <div className="text-center w-5/6 m-auto">
-                     <p className="text-2xl font-semibold">Opps !!! Your cart is empty</p>    
+                     <div className="text-center md:w-5/6 m-auto">
+                     <p className="text-2xl md:font-semibold">Opps !!! Your cart is empty</p>    
                     <p>No items added in your cart. Please add product to your cart list. <Link to='/' className="text-blue-500"> Back to Home</Link></p> 
                       </div>   
                  </div>
@@ -105,7 +99,7 @@ const OrderFoods = () => {
 
               <div className=" ">
                    
-                   <p className="bg-slate-100 hover:text-red-700 text-red-500 text-2xl " > <FontAwesomeIcon icon={faTrashCan}></FontAwesomeIcon></p>
+                   <p onClick={() => hendeldelete(item.category_id)} className="bg-slate-100 hover:text-red-700 text-red-500 text-2xl " > <FontAwesomeIcon icon={faTrashCan}></FontAwesomeIcon></p>
                  </div>
               </div>
              
