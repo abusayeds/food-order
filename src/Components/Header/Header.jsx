@@ -37,9 +37,9 @@ const Header = () => {
     </div>
 
     <div className=' ml-10 flex items-center gap-4  '>
-      <img className='w-12 rounded-full' src={user?.photoURL} alt="" />
+      <img className='w-8 rounded-full' src={user?.photoURL} alt="" />
      {
-      user?.email ?   <p onClick={() => logOut()}>LogOut</p>
+      user?.email ?   <p className='text-white font-bold' onClick={() => logOut()}>LogOut</p>
       : <p> <Link to='/login' className='text-white  '>Log in</Link></p>
      }
     </div>
@@ -149,7 +149,7 @@ const Header = () => {
        <img className='w-12 rounded-full' src={user?.photoURL} alt="" />
        
        {
-      user?.email ?   <p onClick={() => logOut()}>LogOut</p>
+      user?.email ?   <p className='text-white' onClick={() => logOut()}>LogOut</p>
       : <Link to='/login' className='text-white text-2xl'><FontAwesomeIcon icon={faUser}></FontAwesomeIcon></Link>
      }
        </div>

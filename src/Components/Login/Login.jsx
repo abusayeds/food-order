@@ -1,6 +1,6 @@
 import { GoogleAuthProvider } from "firebase/auth";
 import { useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { authContext } from "../Contexts/Context";
  
 
@@ -9,8 +9,10 @@ function Login() {
   const { hendlegooglesingin} = useContext(authContext)
   const {signin} =useContext(authContext)
   const provider = new GoogleAuthProvider()
+  const navigate = useNavigate()
   const googleSingin = () => {
-    hendlegooglesingin(provider)
+    hendlegooglesingin(provider,navigate)
+    
   }
   const hendelsingin = (event) => {
     event.preventDefault()
@@ -21,7 +23,7 @@ function Login() {
     signin(email,password)
     .then(result => {
       const user = result.user;
-    
+      navigate('/home')
       form.reset();
 
   })

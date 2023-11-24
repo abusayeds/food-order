@@ -11,19 +11,7 @@ const Home = () => {
  
     return (
       <section className='md:w-5/6  m-auto'>
-        <div className='header1 text-black flex items-center justify-center mt-10 '>
-          <div className=' flex items-center justify-center'>
-           <div>
-           <div className='text-center'>
-             <p className='text-4xl font-bold '>WELCOME TO ROODFRISS</p>
-             <p className='text-1xl font-semibold text-center mt-2'>SERVE ONLY THE FERSHEST INGREDIENTS</p>
-            </div>
-            <div className='flex items-center justify-center mt-5'>
-            <button className='border-green-700 hover:none'> BOOK YOUR TABLE</button>
-            </div>
-           </div>
-          </div>
-        </div>
+        
 
         
          <main className='  text-black rounded bg-white mt-10'>

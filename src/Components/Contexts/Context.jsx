@@ -4,6 +4,8 @@ import {createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithE
 import app from "../../firebase/firebase.Config";
 
 
+
+
   export const authContext = createContext()
 
 
@@ -33,20 +35,29 @@ import app from "../../firebase/firebase.Config";
     // singin methods ******
 
      const auth = getAuth(app)
-     const [user , setuser] = useState({})
+     const [user , setuser] = useState(null)
+    
        
 
      const logOut = () =>{
-      signOut(auth)
+       signOut(auth)
       .then(() => {
-        setuser({})
+        setuser(null)
       })
       .catch(() =>{
-        setuser({})
+        setuser(null)
       })
+
      }
-     const hendlegooglesingin = (provider) => {
+     const hendlegooglesingin = (provider,navigate) => {
       signInWithPopup (auth , provider)
+      .then(result => {
+        const user = result.user;
+      navigate("/home")
+      
+  
+    })
+    .catch(error => console.error('error' , error))
        return hendlegooglesingin
      }
    const createUser = (email,password) => {
@@ -66,20 +77,16 @@ import app from "../../firebase/firebase.Config";
       return () =>  unSubscribe
     })
    } ,[])
-
-
-
-
-
-
-    // singin methods ******
-     
+   // singin methods ******
+       
 
 
     const authinfo = {
       items , findFoods, findfoodlength ,itemlength ,hendeldelete, 
       // sing methods user
-      user,  hendlegooglesingin,logOut,createUser,signin
+      user,  hendlegooglesingin,logOut,createUser,signin,
+   
+
     }
   return (
     <div>

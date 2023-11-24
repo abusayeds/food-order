@@ -12,6 +12,8 @@ import Inventory from './Components/Inventory/Inventory'
 import Servise from './Components/Servise/Servise'
 import Login from './Components/Login/Login'
 import Register from './Components/Login/Register'
+import RootPart from './Components/Home/RootPart'
+import PrivateRouter from './Components/PrivateRouter/PrivateRouter'
 
 
 
@@ -29,20 +31,25 @@ function App() {
           {
             path: '/',
             loader: () => fetch('http://localhost:5000/food-restaurants'),
-             element: <Home></Home>
+            element:  <RootPart></RootPart>
           },
           {
-            path: ':id',
+            path: 'home',
+            loader: () => fetch('http://localhost:5000/food-restaurants'),
+             element: <PrivateRouter> <Home></Home></PrivateRouter>
+          },
+          {
+            path: 'home/:id',
             loader: ({params}) => fetch(`http://localhost:5000/foods/${params.id}`),
-            element: <Restaurant></Restaurant>
+            element: <PrivateRouter>  <Restaurant></Restaurant> </PrivateRouter> 
           },
           {
             path: 'cart',
-            element: <Cart></Cart>
+            element: <Cart></Cart>  
           },
           {
             path: 'order',
-            element: <OrderFoods></OrderFoods>
+            element: <PrivateRouter>  <OrderFoods></OrderFoods> </PrivateRouter>
           },
           {
             path: "about",
