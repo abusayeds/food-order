@@ -12,8 +12,9 @@ import Inventory from './Components/Inventory/Inventory'
 import Servise from './Components/Servise/Servise'
 import Login from './Components/Login/Login'
 import Register from './Components/Login/Register'
-import RootPart from './Components/Home/RootPart'
+
 import PrivateRouter from './Components/PrivateRouter/PrivateRouter'
+import RootPage from './Components/RootPage/RootPage'
 
 
 
@@ -30,8 +31,7 @@ function App() {
         children:[
           {
             path: '/',
-            loader: () => fetch('http://localhost:5000/food-restaurants'),
-            element:  <RootPart></RootPart>
+            element:  <RootPage></RootPage>
           },
           {
             path: 'home',

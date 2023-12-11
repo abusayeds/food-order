@@ -18,7 +18,7 @@ const RootPart = () => {
        <p className='text-1xl font-semibold text-center mt-2'>SERVE ONLY THE FERSHEST INGREDIENTS</p>
         </div>
        <div className='flex items-center justify-center mt-5'>
-       <button className='border-green-700 hover:none'> <Link to={'home'} className=" text-black">Seen Our items</Link></button>
+       <button className='border-green-700 '> <Link to='/home' className=" text-black">Seen Our items</Link></button>
       </div>
        </div>
       </div>
@@ -53,7 +53,7 @@ const RootPart = () => {
       <img className="h-80 w-full" src="https://img.freepik.com/premium-photo/chef-hotel-restaurant-kitchen-cooking_972290-3919.jpg" alt="" />
 
      <div className="absolute inset-0 flex items-center justify-center bg-black/20 opacity-0 md:group-hover:opacity-100 transition-opacity duration-300">
-     <Link to={'home'} className=" text-white bg-blue-500 p-2 hover:bg-blue-600 rounded  hover:text-white ">Seen Our items</Link>
+     <Link to='/home' className=" text-white bg-blue-500 p-2 hover:bg-blue-600 rounded  hover:text-white ">Seen Our items</Link>
      </div>
      </div>
      <div className="bg-yellow-500 text-center text-xl"> 
@@ -66,7 +66,7 @@ const RootPart = () => {
       <div className=" h-52  overflow-hidden">
       <img className=" h-52 " src="https://c8.alamy.com/comp/D7KPBC/female-chef-in-hotel-or-restaurant-kitchen-cooking-she-is-working-D7KPBC.jpg" alt="" />
      <div className="absolute inset-0 flex items-center justify-center bg-black/20 opacity-0 md:group-hover:opacity-100 transition-opacity duration-300">
-     <Link to={'home'} className=" text-white bg-blue-500 p-2 hover:bg-blue-600 rounded  hover:text-white ">Seen Our items</Link>
+     <Link to='/home' className=" text-white bg-blue-500 p-2 hover:bg-blue-600 rounded  hover:text-white ">Seen Our items</Link>
      </div>
      </div>
      <div className="bg-yellow-500 text-center text-xl"> 
@@ -80,7 +80,7 @@ const RootPart = () => {
       <div className=" h-52  overflow-hidden">
       <img className=" h-52 " src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTzvvJbMwnweMXAA-J281Sw0R2KD8mKxkce4A&usqp=CAU" alt="" />
      <div className="absolute inset-0 flex items-center justify-center bg-black/20 opacity-0 md:group-hover:opacity-100 transition-opacity duration-300">
-     <Link to={'home'} className=" text-white bg-blue-500 p-2 hover:bg-blue-600 rounded  hover:text-white ">Seen Our items</Link>
+     <Link to='/home' className=" text-white bg-blue-500 p-2 hover:bg-blue-600 rounded  hover:text-white ">Seen Our items</Link>
      </div>
      </div>
      <div className="bg-yellow-500 text-center text-xl"> 
@@ -94,7 +94,7 @@ const RootPart = () => {
       <img  className ="h-52"src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTo7vPZWeW4cwv5UbyxBDIe-YgyFt3q1qnCbA&usqp=CAU" alt="" />
 
      <div className="absolute inset-0 flex items-center justify-center bg-black/20 opacity-0 md:group-hover:opacity-100 transition-opacity duration-300">
-     <Link to={'home'} className=" text-white bg-blue-500 p-2 hover:bg-blue-600 rounded  hover:text-white ">Seen Our items</Link>>
+     <Link to='/home' className=" text-white bg-blue-500 p-2 hover:bg-blue-600 rounded  hover:text-white ">Seen Our items</Link>
      </div>
      </div>
      <div className="bg-yellow-500 text-center text-xl"> 

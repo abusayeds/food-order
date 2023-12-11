@@ -53,9 +53,9 @@ const Header = () => {
             <div className='  flex justify-between p-2 ' >
            
               
-              <div className=' relative flex items-center'>
-              <input className=' px-2  py-2 rounded ' type="text" placeholder='search foods  '/>
-               <FontAwesomeIcon className='absolute right-3' icon={faSearch}></FontAwesomeIcon>
+              <div className=' relative   flex items-center'>
+              <input className='  px-2  py-2 rounded ' type="text" placeholder='search foods  '/>
+               <FontAwesomeIcon  className='absolute right-3' icon={faSearch}></FontAwesomeIcon>
               </div>
                
                <div>
@@ -101,22 +101,18 @@ const Header = () => {
 
            {/*------- mobail devise -----*/}
 
-           <div className={`md:hidden bg-slate-200 w-full h-full relative bottom-0  duration-500  ${open ? "left-0" : "hidden"} } `}>
-                  <div className='px-2 py-4 flex gap-3'>
-                              
-                
+           <div className={`md:hidden bg-slate-500  relative  duration-700 ${open ? "left-0" : "left-[-720px]"} } `}>
+                  <div className='px-2 py-4  gap-3'>
                   <div className='group'>
                   <div className=' '>
-                  <Link to="" className=' text-black'>
-                  
-                   Category</Link>
+                  <Link to="" className=' text-black'>Category</Link>
                   </div>
-                  <div className='absolute top-10 left-4 p-5 rounded  bg-slate-200 hidden group-hover:block hover:block '>
-                  <Link  to="" className=' text-black'> Category</Link>
+                  <div className=' top-10 left-4 p-5 rounded  bg-slate-200 hidden group-hover:block hover:block '>
+                  <Link  to="" className=' text-black'> Category1</Link>
                   <br />
-                  <Link  to="" className=' text-black'> Category</Link>
+                  <Link  to="" className=' text-black'> Category2</Link>
                   <br />
-                  <Link  to="" className=' text-black'> Category</Link>
+                  <Link  to="" className=' text-black'> Category3</Link>
                   </div>
                   
                   </div>
