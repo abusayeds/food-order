@@ -8,3 +8,15 @@
     bottom: 0;
     width: 100%;
 }
+
+
+
+.zoom {
+
+ 
+    transition: transform 0.5s ease;
+}
+
+.zoom:hover {
+    transform: scale(1.1 ); /* Adjust the scale factor for zoom level */
+}

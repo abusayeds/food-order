@@ -1,12 +1,13 @@
 
 
 .app{
-  background-image: url('../src/Image/bg-2.jpg');
+background-image: url('../src/Image/bg-2.jpg');
 background-size: cover;
 background-repeat: no-repeat;
 background-position: center;
 
 color: whitesmoke;
+
 width: auto;
 background-attachment: fixed;
 position: sticky;

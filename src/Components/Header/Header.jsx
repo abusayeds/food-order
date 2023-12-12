@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 import './Header.css'
 import { Link } from 'react-router-dom';
-import { faAngleDown, faBars,faHome,faSearch,faShoppingCart,faUser,faX } from '@fortawesome/free-solid-svg-icons';
+import { faAngleDown, faArrowRight, faBars,faHome,faSearch,faShoppingCart,faUser,faX } from '@fortawesome/free-solid-svg-icons';
 import { useContext, useState } from 'react';
 import { authContext } from '../Contexts/Context';
 
@@ -47,14 +47,14 @@ const Header = () => {
     </div>
 
 
-     <nav className='bg-slate-200  '>
-         <div className=' md:flex items-center justify-around p-2'>
+     <nav className=' bg-slate-200'>
+         <div className=' md:flex items-center justify-around  h-16'>
             
             <div className='  flex justify-between p-2 ' >
            
               
-              <div className=' relative   flex items-center'>
-              <input className='  px-2  py-2 rounded ' type="text" placeholder='search foods  '/>
+              <div className='  text-black relative   flex items-center'>
+              <input className=' bg-slate-100  px-2  py-2 rounded ' type="text" placeholder='search foods  '/>
                <FontAwesomeIcon  className='absolute right-3' icon={faSearch}></FontAwesomeIcon>
               </div>
                
@@ -75,7 +75,7 @@ const Header = () => {
            <div className='md:flex hidden ml-10  '>
             
                   <div className='group'>
-                    <p><Link className='py-7 px-4 text-black  '> category <FontAwesomeIcon icon={faAngleDown}></FontAwesomeIcon></Link></p>
+                    <p className='font-semibold zoom'> category <FontAwesomeIcon icon={faAngleDown}></FontAwesomeIcon></p>
                     <div className='absolute top-30 bg-slate-300 p-5 rounded hidden group-hover:block hover:block'>
                     <p><Link className='text-black'> BreakFast</Link></p>
                     <p><Link  className='text-black'> Lunce</Link></p>
@@ -101,24 +101,31 @@ const Header = () => {
 
            {/*------- mobail devise -----*/}
 
-           <div className={`md:hidden bg-slate-500  relative  duration-700 ${open ? "left-0" : "left-[-720px]"} } `}>
+           <div className={`md:hidden bg-slate-300   relative  duration-700 ${open ? "left-0" : "left-[-720px]"} } `}>
                   <div className='px-2 py-4  gap-3'>
-                  <div className='group'>
+                  <div className='group '>
                   <div className=' '>
-                  <Link to="" className=' text-black'>Category</Link>
+                  <p className='font-semibold '>Category <FontAwesomeIcon icon={faAngleDown}></FontAwesomeIcon></p>
                   </div>
-                  <div className=' top-10 left-4 p-5 rounded  bg-slate-200 hidden group-hover:block hover:block '>
-                  <Link  to="" className=' text-black'> Category1</Link>
+                  <div className=' top-10 left-2 pl-4 rounded  bg-slate-300 hidden group-hover:block hover:block '>
+                  <Link  to="" className=' text-black'> <FontAwesomeIcon icon={faArrowRight}></FontAwesomeIcon> BreakFast</Link>
                   <br />
-                  <Link  to="" className=' text-black'> Category2</Link>
+                  <Link  to="" className=' text-black'><FontAwesomeIcon icon={faArrowRight}></FontAwesomeIcon> Lunce</Link>
                   <br />
-                  <Link  to="" className=' text-black'> Category3</Link>
-                  </div>
+                  <Link  to="" className=' text-black'> <FontAwesomeIcon icon={faArrowRight}></FontAwesomeIcon> Dinner</Link>
+                  <br />
+                  <Link  to="" className=' text-black'> <FontAwesomeIcon icon={faArrowRight}></FontAwesomeIcon>Drinks</Link>
+                  <br />
+                  <Link  to="" className=' text-black'> <FontAwesomeIcon icon={faArrowRight}></FontAwesomeIcon> Dessert</Link>
                   
+
+                  </div>
                   </div>
 
                   <Link  to="/about" className=' text-black'> About </Link>
+                  <br />
                   <Link to="/inventory" className=' text-black'> Inventory</Link>
+                  <br />
                   <Link to="/servise" className=' text-black '>Servise</Link>
                     </div>
                

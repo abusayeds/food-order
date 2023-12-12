@@ -1,7 +1,11 @@
 
 // import { useState } from 'react';
 import { Link, useLoaderData } from 'react-router-dom';
-import './Home.css'
+import './Home.css';
+// motion
+import { motion } from "framer-motion";
+// variants
+import {fadeIn} from '../../variants'
 
 
 const Home = () => {
@@ -16,8 +20,8 @@ const Home = () => {
         
          <main className='  text-black rounded bg-white mt-10'>
         <p className='text-center font-bold text-2xl '>Our top 6 Resturant hear  !</p>
-         <div className=' mt-10 p-5'>
-       <div  className='md:grid grid-cols-3 gap-5  '>
+         < div className=' mt-10 p-5'>
+         <div  className='md:grid grid-cols-3 gap-5  '>
         {
         foods.map(food => <div 
         key={food.id}
