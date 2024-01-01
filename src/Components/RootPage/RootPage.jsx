@@ -1,6 +1,10 @@
 
 import { Link } from 'react-router-dom';
 
+
+
+
+
 function RootPage() {
   return (
     <main className="w-5/6 m-auto text-black">
@@ -16,7 +20,8 @@ function RootPage() {
       </div>
        </div>
       </div>
-      </div>
+      </div>de
+    
 
       <div className="md:grid grid-cols-2 gap-2 my-20 mt-5">
         <div className="bg-slate-50 rounded flex items-center justify-center p-5 h-80  ">
@@ -37,7 +42,8 @@ function RootPage() {
         </div>
         </div>
 
-
+       {/* about component */}
+      
         
     </main>
   );

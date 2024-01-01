@@ -48,8 +48,12 @@ const addFoods = (restaurant) => {
           </div>
         <div>
         <p className="text-red-600 font-bold">{restaurant.price} $ <FontAwesomeIcon icon={faArrowRight}></FontAwesomeIcon></p>
+
         </div>
         
+        </div>
+        <div className="text-center bg-red-300 p-2 hover:bg-red-400">
+          <p className="font-semibold">Order</p>
         </div>
       </div> )
     }

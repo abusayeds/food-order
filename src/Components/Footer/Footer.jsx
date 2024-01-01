@@ -38,13 +38,13 @@ function Footer() {
           <div className=' md:p-3'>
             <div className='flex gap-3 w-full'> 
              
-              <input className='p-1 w-full' type="text" placeholder='First && Last Name' />
+              <input r className=' rounded p-1 w-full' type="text" placeholder='First && Last Name' />
             </div>
             <div className='mt-3 w-full  '>
-              <input className=' p-1 w-full' type="text" placeholder='Email adderss ' />
+              <input className='rounded  p-1 w-full' type="text" placeholder='Email adderss ' />
             </div>
             <div className='w-full h-full mt-3'>
-              <input className='w-full h-20 p-1' type="text" placeholder='Details' />
+              <input className=' rounded w-full h-20 p-1' type="text" placeholder='Details' />
             </div>
           <p className='text-end mt-3'><button className='bg-yellow-400 '>Sent Messges</button></p>
           </div>

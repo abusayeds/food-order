@@ -87,7 +87,7 @@ const Header = () => {
                   <div>
                   <Link  to="/about" className='py-7 px-4 text-black'> About </Link>
                   <Link to="/inventory" className='py-7 px-4 text-black'> Inventory</Link>
-                  <Link to="" className='py-7 px-4 text-black '>Servise</Link>
+                  <Link to="/servise" className='py-7 px-4 text-black '>Servise</Link>
                   </div>
            </div>
 

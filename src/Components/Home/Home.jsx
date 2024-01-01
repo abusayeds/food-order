@@ -3,9 +3,9 @@
 import { Link, useLoaderData } from 'react-router-dom';
 import './Home.css';
 // motion
-import { motion } from "framer-motion";
+
 // variants
-import {fadeIn} from '../../variants'
+
 
 
 const Home = () => {
