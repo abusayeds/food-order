@@ -39,7 +39,7 @@ const Header = () => {
     <div className=' ml-10 flex items-center gap-4  '>
       <img className='w-8 rounded-full' src={user?.photoURL} alt="" />
      {
-      user?.email ?   <p className='text-white font-bold' onClick={() => logOut()}>LogOut</p>
+      user?.email ?   <p className='text-white font-bold ' onClick={() => logOut()}>LogOut</p>
       : <p> <Link to='/login' className='text-white  '>Log in</Link></p>
      }
     </div>

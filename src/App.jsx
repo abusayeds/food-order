@@ -15,6 +15,7 @@ import Register from './Components/Login/Register'
 
 import PrivateRouter from './Components/PrivateRouter/PrivateRouter'
 import RootPage from './Components/RootPage/RootPage'
+import Checout from './Components/Checout/Checout'
 
 
 
@@ -43,6 +44,7 @@ function App() {
             loader: ({params}) => fetch(`http://localhost:5000/foods/${params.id}`),
             element: <PrivateRouter>  <Restaurant></Restaurant> </PrivateRouter> 
           },
+          
           {
             path: 'cart',
             element: <Cart></Cart>  
@@ -62,6 +64,12 @@ function App() {
           {
             path: 'servise',
             element: <Servise></Servise>
+          },
+          {
+            path: 'servise/:id',
+            loader: ({params}) => fetch(`http://localhost:5000/checout/${params.id}`),
+            element: <Checout></Checout>
+
           },
           {
             path: 'login',

@@ -16,11 +16,11 @@ function RootPage() {
        <p className='text-1xl font-semibold text-center mt-2'>SERVE ONLY THE FERSHEST INGREDIENTS</p>
         </div>
        <div className='flex items-center justify-center mt-5'>
-       <button className='border-green-700 '> <Link to='/home' className=" text-black">Seen Our items</Link></button>
+       <button className='border-green-700 bg-green-500 hover:bg-green-600 '> <Link to='/home' className=" text-black hover:text-black"> <span className='hover:animate-bounce'>Seen Our items</span></Link></button>
       </div>
        </div>
       </div>
-      </div>de
+      </div>
     
 
       <div className="md:grid grid-cols-2 gap-2 my-20 mt-5">

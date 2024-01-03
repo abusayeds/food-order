@@ -1,6 +1,7 @@
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 
 function Servise() {
@@ -10,7 +11,7 @@ function Servise() {
     .then(res => res.json())
     .then(data => setServises(data))
   },[])
-  console.log(servises);
+  
   return (
     <div className=" w-5/6 m-auto text-black my-5  ">
       <div className="text-center w-1/2 m-auto">
@@ -36,7 +37,7 @@ function Servise() {
           <p className="font-semiboldx">{servise.name}</p>
           </div>
         <div>
-        <p className="text-red-600 font-bold">{servise.price} $ </p>
+        <p className=" bg-red-400 hover:animate-bounce p-1 rounded    "><Link to= {`${servise.id}`} className="text-black hover:text-black">Checout</Link> <FontAwesomeIcon icon={faArrowRight}></FontAwesomeIcon> </p>
 
         </div>
         
