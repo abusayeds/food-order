@@ -40,11 +40,11 @@ const Header = () => {
       <img className='w-8 rounded-full' src={user?.photoURL} alt="" />
      {
       user?.email ?   <p className='text-white font-bold ' onClick={() => logOut()}>LogOut</p>
-      : <p> <Link to='/login' className='text-white  '>Log in</Link></p>
+      : <p> <Link  to='/login' className='text-white  '>Log in</Link></p>
      }
     </div>
 
-    </div>
+    </div> 
 
 
      <nav className=' bg-slate-200'>
@@ -58,7 +58,7 @@ const Header = () => {
                <FontAwesomeIcon  className='absolute right-3' icon={faSearch}></FontAwesomeIcon>
               </div>
                
-               <div>
+               <div >
                <p onClick={() => setOpen(!open)} className='text-2xl md:hidden'>
                
                
@@ -74,7 +74,7 @@ const Header = () => {
 
            <div className='md:flex hidden ml-10  '>
             
-                  <div className='group'>
+                  <div className='group '>
                     <p className='font-semibold zoom'> category <FontAwesomeIcon icon={faAngleDown}></FontAwesomeIcon></p>
                     <div className='absolute top-30 bg-slate-300 p-5 rounded hidden group-hover:block hover:block'>
                     <p><Link className='text-black'> BreakFast</Link></p>
@@ -86,7 +86,7 @@ const Header = () => {
                   </div>
                   <div>
                   <Link  to="/about" className='py-7 px-4 text-black'> About </Link>
-                  <Link to="/inventory" className='py-7 px-4 text-black'> Inventory</Link>
+                  {/* <Link to="/inventory" className='py-7 px-4 text-black'> Inventory</Link> */}
                   <Link to="/servise" className='py-7 px-4 text-black '>Servise</Link>
                   </div>
            </div>
@@ -123,8 +123,7 @@ const Header = () => {
                   </div>
 
                   <Link  to="/about" className=' text-black'> About </Link>
-                  <br />
-                  <Link to="/inventory" className=' text-black'> Inventory</Link>
+                 
                   <br />
                   <Link to="/servise" className=' text-black '>Servise</Link>
                     </div>

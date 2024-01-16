@@ -36,7 +36,7 @@ const addFoods = (restaurant) => {
         onClick={() => addFoods(restaurant)  }
       key={restaurant.details}
 
-      className="m-5 bg-slate-100 rounded "
+      className="md:m-5 my-4 bg-slate-100 rounded "
       
       >
         {

@@ -14,9 +14,9 @@ function Servise() {
   
   return (
     <div className=" w-5/6 m-auto text-black my-5  ">
-      <div className="text-center w-1/2 m-auto">
+      <div className="md:text-center md:w-1/2 m-auto">
         <p className=" text-red-400 font-bold">Servises</p>
-        <p className="text-5xl font-semibold"> Our Servise Area</p>
+        <p className="md:text-5xl text-3xl  font-semibold"> Our Servise Area</p>
         <p className="mt-8">Counter service is food ordered by the customer at the counter and either picked up at the counter by the customer or delivered to the table by restaurant staff </p>
       </div>
     <div className="md:grid grid-cols-3 md:gap-4">
@@ -26,7 +26,7 @@ function Servise() {
           
       key={servise.id}
 
-      className="m-5 bg-slate-100 rounded "
+      className="md:m-5 my-4 bg-slate-100 rounded "
       
       >
         {
