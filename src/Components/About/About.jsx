@@ -19,7 +19,7 @@ function About() {
         
         <Link to='/home'><button className=" text-black bg-red-300 hover:bg-red-400">Get Started</button></Link>
       </div>
-      </div>
+      </div> 
     </div> 
 
                                                 
