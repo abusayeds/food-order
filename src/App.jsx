@@ -36,12 +36,12 @@ function App() {
           },
           {
             path: 'home',
-            loader: () => fetch('http://localhost:5000/food-restaurants'),
+            loader: () => fetch('https://food-server-r8jrpkydw-abusayeds-projects-bd47f256.vercel.app/food-restaurants'),
              element: <PrivateRouter> <Home></Home></PrivateRouter>
           },
           {
             path: 'home/:id',
-            loader: ({params}) => fetch(`http://localhost:5000/foods/${params.id}`),
+            loader: ({params}) => fetch(`https://food-server-r8jrpkydw-abusayeds-projects-bd47f256.vercel.app/foods/${params.id}`),
             element: <PrivateRouter>  <Restaurant></Restaurant> </PrivateRouter> 
           },
           
@@ -67,7 +67,7 @@ function App() {
           },
           {
             path: 'servise/:id',
-            loader: ({params}) => fetch(`http://localhost:5000/checout/${params.id}`),
+            loader: ({params}) => fetch(`https://food-server-r8jrpkydw-abusayeds-projects-bd47f256.vercel.app/checout/${params.id}`),
             element: <Checout></Checout>
 
           },

@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 function Servise() {
   const [servises, setServises] = useState([])
   useEffect( () => {
-    fetch('http://localhost:5000/servises')
+    fetch('https://food-server-r8jrpkydw-abusayeds-projects-bd47f256.vercel.app/servises')
     .then(res => res.json())
     .then(data => setServises(data))
   },[])

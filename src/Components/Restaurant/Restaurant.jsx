@@ -16,7 +16,7 @@ const [items , setItems] = useState([])
 
 
 useEffect(() => {
-  fetch('http://localhost:5000/items')
+  fetch('https://food-server-r8jrpkydw-abusayeds-projects-bd47f256.vercel.app/items')
   .then(res => res.json())
   .then(data => setItems(data))
 },[])

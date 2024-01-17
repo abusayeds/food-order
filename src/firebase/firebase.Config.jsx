@@ -4,6 +4,8 @@ import { initializeApp } from "firebase/app";
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 // Your web app's Firebase configuration
+
+// real
 const firebaseConfig = {
   apiKey: "AIzaSyBTYjM3OMR7oy76ykTxjkEXFv4geZLZD7E",
   authDomain: "food-order-a389a.firebaseapp.com",
